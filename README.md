@@ -1,7 +1,49 @@
 ReDa-Api
 ========
 
-Node Application for serving ReDa data over REST
+Node Application for serving ReDa data over REST.
+
+This Application was built to create a robust interface into
+my previous employer's 'Data Lake'.  It allowed any piece of
+Automation/Test Script in any environment the ability to get
+there data recorded. Any process using the api would be 
+givin a unique id(Run ID) through which  all data whether it fit the
+schema or was stored in an archive could be stored/accessed. There was
+a Front End react dashboard application that interacted directly with
+this api (Ported from an old apache/php dashboard). It was written by
+a front-end developer but I still served and maintained it using my
+dokku infrastructure. It provided users the ablility to see the data under there
+their Run. They could also download/update there archives
+using the dasboard.
+
+Docs, S3 credentials, LDAP Authorzation configs, and Schemas 
+where unique to project by contract.
+
+The Databus/Avro components were used to publish data to our ELK
+Stack where users could efficiently search and visualize
+historical data. 
+
+Schemas was used to convert API Terms Like Run/Step to
+Legacy DB terms like Group/Test. This was necessary 
+because many Legacy applications within certain project
+still required the legacy schemas and old DB access protocols.
+
+Another big issue this solved was that archive management was
+previously done over Network mounts, due to many of vm's being
+maintained in lab environmnets. Once things Started moving to
+Cloud Rest Routes for handleing Archives were implemented.
+
+S3 was used for long term archive backup/reteintion, Though the 
+Archives were served off external voulumes mounted to the vms. It
+was also used to backup our mysql data and schemas. See scripts
+for S3 result backup configs and info
+
+The final Steps I worked on before leaving was
+
+1) add New v3g project(may notice the db resources are 1-1 since was brand new)
+2) Databus support for historical data search/visualization.
+3) Database migration from legacy hosts to dokku hosts. Not schema changes though.
+
 
 Development
 ===========

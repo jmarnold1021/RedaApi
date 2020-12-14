@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 // script is run in a one off container with duplicate env of service containers
-// DEPS. ENV and this SCRIPT are available in that container
+// DEPS. ENV and this SCRIPT are available in that container. Since it was not
+// created during deploy nginx will not route any requests to it.
 
 
 // It is recommeneded to not turn on cleanup unti the backup task has been verified or you just need to clean up
