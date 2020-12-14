@@ -1,0 +1,417 @@
+{
+  "conversions" : {
+    "attributes": {
+      "Runs" : {
+        "RunID"           : "RunID",
+        "Project"         : "Project",
+        "Results"         : "Results",
+        "Datetime"        : "Datetime",
+        "DurationHrs"     : "DurationHrs",
+        "StationName"     : "StationName",
+        "StationType"     : "StationType",
+        "RunName"         : "RunName",
+        "TestCase"        : "TestCase",
+        "TestExecServer"  : "TestExecServer",
+        "SAMTestCase"     : "SAMTestCase",
+        "Description"     : "Description",
+        "Result"          : "Result",
+        "Notes"           : "Notes",
+        "User"            : "User",
+        "Status"          : "Status",
+        "LinkedSet"       : "LinkedSet",
+        "CleanupDatetime" : "CleanupDatetime",
+        "JenkinsJob"      : "JenkinsJob",
+        "Ingested"        : "Ingested"
+      },
+      "Steps" : {
+        "RunID"       : "RunID",
+        "StepID"      : "StepID",
+        "Status"      : "Status",
+        "Datetime"    : "Datetime",
+        "DurationHrs" : "DurationHrs",
+        "TestCase"    : "TestCase",
+        "ScriptName"  : "ScriptName",
+        "ConfigFile"  : "ConfigFile",
+        "Result"      : "Result",
+        "Notes"       : "Notes"
+      },
+      "VerificationPoints" : {
+        "RunID"         : "RunID",
+        "StepID"        : "StepID",
+        "SetID"         : "SetID",
+        "Name"          : "Name",
+        "Datetime"      : "Datetime",
+        "Type"          : "Type",
+        "ExpectedValue" : "ExpectedValue",
+        "Operator"      : "Operator",
+        "ResultValue"   : "ResultValue",
+        "Result"        : "Result",
+        "id"            : "id"
+      },
+      "VersionInfo" : {
+        "RunID"   : "RunID",
+        "Name"    : "Name",
+        "Type"    : "Type",
+        "Version" : "Version",
+        "vCMDB"   : "vCMDB"
+      },
+      "JamaReqs": {
+        "RunID"  : "RunID",
+        "StepID" : "StepID",
+        "ReqID"  : "ReqID"
+      },
+      "Metrics" : {
+        "RunID"    : "RunID",
+        "StepID"   : "StepID",
+        "MetricID" : "MetricID",
+        "Datetime" : "Datetime",
+        "Type"     : "Type",
+        "Metric"   : "Metric",
+        "Value"    : "Value"
+      },
+      "Params" : {
+        "MetricID" : "MetricID",
+        "Name"     : "Name",
+        "Value"    : "Value"
+      },
+      "RunPlans" : {
+        "PlanId"          : "PlanId",
+        "Plan"            : "Plan",
+        "PlanDescription" : "PlanDescription",
+        "TestCase"        : "TestCase",
+        "Description"     : "Description",
+        "Timestamp"       : "Timestamp"
+      },
+      "StepPlans" : {
+        "PlanId"          : "PlanId",
+        "Plan"            : "Plan",
+        "PlanDescription" : "PlanDescription",
+        "ScriptName"      : "ScriptName",
+        "Description"     : "Description",
+        "ParamFile"       : "ParamFile",
+        "Timestamp"       : "Timestamp"
+      },
+      "RunPlanLinks" : {
+        "LinkId"      : "LinkId",
+        "RunPlanId"   : "RunPlanId",
+        "Link"        : "Link",
+        "LinkUrl"     : "LinkUrl",
+        "AltTestCase" : "AltTestCase"
+      },
+      "StepPlanLinks" : {
+        "LinkId"      : "LinkId",
+        "StepPlanId"  : "StepPlanId",
+        "Link"        : "Link",
+        "LinkUrl"     : "LinkUrl",
+        "AltTestCase" : "AltTestCase"
+      },
+      "Jama": {
+        "ReqID"       : "ReqID",
+        "Description" : "Description",
+        "CreateDate"  : "CreateDate",
+        "ModDate"     : "ModDate",
+        "Tier"        : "Tier",
+        "Type"        : "Type",
+        "Parent"      : "Parent",
+        "id"          : "id" 
+      }
+    }
+  },
+  "constraints" : {
+    "create": {
+      "Runs" : {
+        "blacklist": [ 
+          "RunID"
+        ],
+        "required": [
+          ["TestCase","Project"]
+        ] 
+      },
+      "Steps" : {
+        "blacklist": [
+          "StepID"
+        ],
+        "required": [
+          ["RunID","ScriptName"]
+        ]
+      },
+      "VerificationPoints" : {
+        "blacklist": [
+          "id"
+        ],
+        "required": [
+          ["RunID","Name","Result"],
+          ["RunID","StepID","Name","Result"]
+        ]
+      },
+      "VersionInfo" : {
+        "required": [
+          ["RunID","Name","Type"]
+        ]
+      },
+      "JamaReqs": {
+        "required": [
+          ["RunID", "ReqID"]
+        ]
+      },
+      "Metrics" : {
+        "blacklist": [
+          "MetricID"
+        ],
+        "required": [
+          ["RunID","Type","Metric","Value"]
+        ]
+      },
+      "Params" : {
+        "blacklist": [
+          "ParamID"
+        ],
+        "required": [
+          ["MetricID","Name","Value"]
+        ]
+      },
+      "Attributes" : {
+        "required": [
+          ["RunID","StepID","Name","Value"]
+        ]
+      },
+      "RunPlans" : {
+        "blacklist": [
+          "PlanID"
+        ],
+        "required": [
+          ["Plan","TestCase"]
+        ]
+      },
+      "StepPlans" : {
+        "blacklist": [
+          "PlanId"
+        ],
+        "required": [
+          ["Plan","ScriptName"]
+        ]
+      },
+      "RunPlanLinks" : {
+        "blacklist": [
+          "LinkId"
+        ],
+        "required": [
+          ["RunPlanId","LinkUrl"]
+        ]
+      },
+      "StepPlanLinks" : {
+        "blacklist": [
+          "LinkId"
+        ],
+        "required": [
+          ["StepPlanId","LinkUrl"]
+        ]
+      }
+    },
+    "update": {
+      "Runs" : {
+        "blacklist": [ 
+          "RunID"
+        ]
+      },
+      "Steps" : {
+        "blacklist": [
+          "RunID",
+          "StepID"
+        ]
+      },
+      "RunPlans" : {
+        "blacklist": [
+          "PlanId"
+        ]
+      },
+      "StepPlans" : {
+        "blacklist": [
+          "PlanId"
+        ]
+      },
+      "RunPlanLinks" : {
+        "blacklist": [
+          "LinkId",
+          "RunPlanId"
+        ]
+      },
+      "StepPlanLinks" : {
+        "blacklist": [
+          "LinkId",
+          "StepPlanId"
+        ]
+      }
+    },
+    "read":{
+      "Runs": {
+        "required": [
+          "RunID",
+          "Project",
+          "Results",
+          "Datetime",
+          "DurationHrs",
+          "StationName",
+          "StationType",
+          "RunName",
+          "TestCase",
+          "TestExecServer",
+          "SAMTestCase",
+          "Description",
+          "Result",
+          "Notes",
+          "User",
+          "Status",
+          "LinkedSet",
+          "CleanupDatetime",
+          "JenkinsJob",
+          "Ingested"
+        ]
+      },
+      "Steps": {
+        "required": [
+          "RunID",
+          "StepID",
+          "Status",
+          "Datetime",
+          "DurationHrs",
+          "TestCase",
+          "ScriptName",
+          "ConfigFile",
+          "Result",
+          "Notes"
+        ] 
+      },
+      "VerificationPoints" : {
+        "requied": [ 
+          "RunID",
+          "StepID",
+          "SetID",
+          "Name",
+          "Datetime",
+          "Type",
+          "ExpectedValue",
+          "Operator",
+          "ResultValue",
+          "Result",
+          "id"           
+        ]
+      },
+      "VersionInfo" : {
+        "required": [
+          "RunID",
+          "Name",
+          "Type",
+          "Version",
+          "vCMDB"
+        ]
+      },
+      "JamaReqs": {
+        "required": [
+          "RunID",
+          "StepID",
+          "ReqID"
+        ]
+      },
+      "Metrics" : {
+        "required": [
+          "RunID",
+          "StepID",
+          "MetricID",
+          "Datetime",
+          "Type",
+          "Metric",
+          "Value"
+        ]
+      },
+      "Params" : {
+        "required": [
+          "MetricID",
+          "Name",
+          "Value"
+        ]
+      },
+      "RunPlans" : {
+        "required" : [
+          "PlanId",
+          "Plan",
+          "PlanDescription",
+          "TestCase",
+          "Description",
+          "Timestamp"
+        ]
+      },
+      "StepPlans" : {
+        "required": [
+          "PlanId",
+          "Plan",
+          "PlanDescription",
+          "ScriptName",
+          "Description",
+          "ParamFile",
+          "Timestamp"
+        ]
+      },
+      "RunPlanLinks" : {
+        "required": [
+          "LinkId",
+          "RunPlanId",
+          "Link",
+          "LinkUrl",
+          "AltTestCase"
+        ]
+      },
+      "StepPlanLinks" : {
+        "required": [
+          "LinkId",
+          "StepPlanId",
+          "Link",
+          "LinkUrl",
+          "AltTestCase"
+        ]
+      }
+    },
+    "delete": {
+      "Runs" : {
+        "required": [ 
+          "RunID"
+        ]
+      },
+      "Steps" : {
+        "required": [
+          "RunID",
+          "StepID"
+        ]
+      },
+      "VerificationPoints" : {
+        "required": [
+          "RunID",
+          "StepID",
+          "id"
+        ]
+      },
+      "RunPlans" : {
+        "required": [
+          "PlanId"
+        ]
+      },
+      "StepPlans" : {
+        "required": [
+          "PlanId"
+        ]
+      },
+      "RunPlanLinks" : {
+        "required": [
+          "LinkId",
+          "RunPlanId"
+        ]
+      },
+      "StepPlanLinks" : {
+        "required": [
+          "LinkId",
+          "StepPlanId"
+        ]
+      }
+    }
+  }
+}

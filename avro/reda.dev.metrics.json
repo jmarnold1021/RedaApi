@@ -1,0 +1,8 @@
+{
+  "name": "reda.dev.metrics",
+  "partitions": 1,
+  "value_schema": "@reda.metrics.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

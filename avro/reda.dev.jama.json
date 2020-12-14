@@ -1,0 +1,8 @@
+{
+  "name": "reda.dev.jama",
+  "partitions": 1,
+  "value_schema": "@reda.jama.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

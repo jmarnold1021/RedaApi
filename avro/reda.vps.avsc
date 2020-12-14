@@ -1,0 +1,157 @@
+{
+  "type" : "record",
+  "name" : "VerificationPoints",
+  "namespace" : "reda",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "string",
+    "default": "vp"
+
+  },{
+    "name" : "id",
+    "type" : "long"
+
+  }, {
+    "name" : "time",
+    "type" : "long"
+
+  }, {
+    "name" : "vp_type",
+    "type" : "string"
+
+  }, {
+    "name" : "expvalue",
+    "type" : "string"
+
+  }, {
+    "name" : "name",
+    "type" : "string"
+
+  }, {
+    "name" : "op",
+    "type" : "string"
+
+  }, {
+    "name" : "actvalue",
+    "type" : "string"
+
+  }, {
+    "name" : "actvalue_int",
+    "type" : "long",
+    "default": 0
+
+  }, {
+    "name" : "actvalue_float",
+    "type" : "double",
+    "default": 0.0
+
+  }, {
+    "name" : "result",
+    "type" : "string"
+
+  },  {
+    "name" : "run",
+    "type" : [ "string", {
+      "type" : "record",
+      "name" : "run",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "long"
+
+      }, {
+        "name" : "time",
+        "type" : "long"
+
+      }, {
+        "name" : "duration",
+        "type" : "double"
+
+      }, {
+        "name" : "cleanuptime",
+        "type" : "long"
+
+      }, {
+        "name" : "station",
+        "type" : "string"
+
+      }, {
+        "name" : "groupname",
+        "type" : "string"
+
+      }, {
+        "name" : "testcase",
+        "type" : "string"
+
+      }, {
+        "name" : "user",
+        "type" : "string"
+
+      }, {
+        "name" : "status",
+        "type" : "string"
+
+      }, {
+        "name" : "description",
+        "type" : "string"
+
+      }, {
+        "name" : "result",
+        "type" : "string"
+
+      }, {
+        "name" : "runmode",
+        "type" : "string"
+
+      }, {
+        "name" : "testplan",
+        "type" : "string"
+
+      }, {
+        "name" : "testcycle",
+        "type" : "string"
+
+      } ]
+    } ]
+  }, {
+    "name" : "step",
+    "type" : [ "string", {
+      "type" : "record",
+      "name" : "step",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "long"
+
+      }, {
+        "name" : "time",
+        "type" : "long"
+
+      }, {
+        "name" : "duration",
+        "type" : "double",
+        "default": 0.0 
+
+      }, {
+        "name" : "testcase",
+        "type" : "string"
+
+      }, {
+        "name" : "name",
+        "type" : "string"
+
+      }, {
+        "name" : "param",
+        "type" : "string"
+
+      }, {
+        "name" : "status",
+        "type" : "string"
+
+      }, {
+        "name" : "result",
+        "type" : "string"
+
+      } ]
+    } ]
+  } ],
+  "version": 1
+}

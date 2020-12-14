@@ -1,0 +1,8 @@
+{
+  "name": "reda.sb2.steps",
+  "partitions": 1,
+  "value_schema": "@reda.steps.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

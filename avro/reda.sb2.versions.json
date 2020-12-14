@@ -1,0 +1,8 @@
+{
+  "name": "reda.sb2.versions",
+  "partitions": 1,
+  "value_schema": "@reda.versions.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

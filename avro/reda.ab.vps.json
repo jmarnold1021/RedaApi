@@ -1,0 +1,8 @@
+{
+  "name": "reda.ab.vps",
+  "partitions": 1,
+  "value_schema": "@reda.vps.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

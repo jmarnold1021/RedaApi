@@ -1,0 +1,15 @@
+{
+  "name": "ReDa-API",
+  "description": "Servers ReDa data over http",
+  "keywords": [
+    "nodejs",
+    "express",
+    "vipcat"
+  ],
+  "scripts": {
+    "dokku": {
+      "predeploy": "/app/scripts/build_docs.sh"
+    }
+  }
+}
+

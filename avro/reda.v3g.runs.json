@@ -1,0 +1,8 @@
+{
+  "name": "reda.v3g.runs",
+  "partitions": 1,
+  "value_schema": "@reda.runs.avsc",
+  "tags": {
+    "env": "testing"
+  }
+}

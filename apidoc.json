@@ -1,0 +1,11 @@
+{
+    "name": "ReDa Api",
+    "header": {
+        "title": "Overview",
+        "filename": "public/overview.md"
+    },
+    "footer": {
+        "title": "Conventions",
+        "filename": "public/conventions.md"
+    }
+}

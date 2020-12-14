@@ -1,0 +1,69 @@
+{
+  "type" : "record",
+  "name" : "Runs",
+  "namespace" : "reda",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "string",
+    "default": "run"
+
+  },{
+    "name" : "id",
+    "type" : "long"
+
+  }, {
+    "name" : "time",
+    "type" : "long"
+
+  }, {
+    "name" : "duration",
+    "type" : "double",
+    "default": 0.0
+
+  }, {
+    "name" : "cleanuptime",
+    "type" : "long"
+
+  }, {
+    "name" : "station",
+    "type" : "string"
+
+  }, {
+    "name" : "groupname",
+    "type" : "string"
+
+  }, {
+    "name" : "testcase",
+    "type" : "string"
+
+  }, {
+    "name" : "user",
+    "type" : "string"
+
+  }, {
+    "name" : "status",
+    "type" : "string"
+
+  }, {
+    "name" : "description",
+    "type" : "string"
+
+  }, {
+    "name" : "result",
+    "type" : "string"
+
+  }, {
+    "name" : "runmode",
+    "type" : "string"
+
+  }, {
+    "name" : "testplan",
+    "type" : "string"
+
+  }, {
+    "name" : "testcycle",
+    "type" : "string"
+
+  } ],
+  "version": 1
+}
